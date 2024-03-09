@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue JS 3</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .fav {
+            color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>Emi ni Template {{title}}</h2>
+        <p>{{author}}</p>
+        <a :href="url">Pastor Chris</a>
+        <p v-if="showFlowers">{{flowers}}</p>
+        <button @click="changeTitle"><span v-if="showFlowers">Hide </span> <span v-else>Show </span>flowers</button>
+        <br>
+ 
+        <ul>
+            <li @click="book.isFav = !book.isFav" :class="{fav: book.isFav}" v-for="book in books">
+                <h4>{{book.title}}</h4>
+                <p>{{book.author}}</p>
+            </li>
+        </ul>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
